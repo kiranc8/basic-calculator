@@ -7,6 +7,7 @@ function App() {
   let [res, setRes] = useState(0);
   let [sign, setSign] = useState("");
 
+  // Function which handles number inputs
   const numClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
@@ -17,6 +18,7 @@ function App() {
     }
   };
 
+  // Function which handles operator inputs
   const signClickHandler = (e) => {
     const value = e.target.innerHTML;
     setSign(value);
@@ -24,6 +26,7 @@ function App() {
     setNum("");
   };
 
+  // Function to do the operation
   const equalsClickHandler = () => {
     console.log(num);
     console.log(res);
@@ -43,16 +46,19 @@ function App() {
     setSign("");
   };
 
+  // Function to reset the state values
   const resetClickHandler = () => {
     setRes("0");
     setNum(0);
     setSign("");
   };
 
+  // Function to reverse the sign
   const invertClickHandler = () => {
     setNum(-1 * num);
   };
 
+  // Function to handle decimal inputs
   const commaHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
@@ -62,8 +68,11 @@ function App() {
   };
 
   return (
+    //  Beginning of container section
     <div className="container">
+      {/* Beginning of Wrapper section */}
       <div className="wrapper">
+        {/* Beginning of display section */}
         <div className="display-wrapper">
           <div className="display">
             {num.toString().length >= 16
@@ -71,6 +80,8 @@ function App() {
               : num}
           </div>
         </div>
+        {/* End of display section */}
+        {/* Beginning of buttons section */}
         <div className="buttons">
           <div className="btn btn_operator" onClick={resetClickHandler}>
             C
@@ -157,8 +168,11 @@ function App() {
             =
           </div>
         </div>
+        {/* End of buttons section */}
       </div>
+      {/* End of Wrapper section */}
     </div>
+    // End of container section
   );
 }
 
