@@ -28,9 +28,6 @@ function App() {
 
   // Function to do the operation
   const equalsClickHandler = () => {
-    console.log(num);
-    console.log(res);
-    console.log(sign);
     if (sign === "+") {
       setNum(num + res);
     } else if (sign === "/") {
